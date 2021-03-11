@@ -5,9 +5,7 @@ const lightBoxImgRef = document.querySelector(".lightbox__image");
 galleryListRef.addEventListener("click", onImgBoxClick);
 lightBoxRef.addEventListener("click", onCloseBtnClick);
 lightBoxRef.addEventListener("click", onLightBoxOverlayClick);
-
 window.addEventListener("keydown", onEscKeyPress);
-// document.addEventListener("keyup", onArrowPress);
 
 function setAttributeOnImg(attribute, value) {
   lightBoxImgRef.setAttribute(attribute, value);
@@ -26,7 +24,7 @@ function onImgBoxClick(event) {
   setAttributeOnImg("alt", event.target.getAttribute("alt"));
 }
 
-function cleanAtributes() {
+function cleanAttributes() {
   lightBoxRef.classList.remove("is-open");
 
   setAttributeOnImg("src", "");
@@ -38,7 +36,7 @@ function onCloseBtnClick(event) {
     return;
   }
 
-  cleanAtributes();
+  cleanAttributes();
 }
 
 function onLightBoxOverlayClick(event) {
@@ -46,11 +44,11 @@ function onLightBoxOverlayClick(event) {
     return;
   }
 
-  cleanAtributes();
+  cleanAttributes();
 }
 
 function onEscKeyPress(event) {
   if (event.code === "Escape") {
-    cleanAtributes();
+    cleanAttributes();
   }
 }
